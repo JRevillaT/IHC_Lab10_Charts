@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Balance de los cursos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html, body{
+      background: #f1f1f1;
+      padding-top: 10px;
+    }
+    .wrapper{
+      width:60%;
+      display:block;
+      overflow:hidden;
+      margin:0 auto;
+      padding: 60px 50px;
+      background:#fff;
+      border-radius:4px;
+    }
+    canvas{
+      background:#fff;
+    }
+    .jumbotron{
+        color:darkblue;
+        font-family: "century gothic";
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Arnold, este el balance de tus cursos 2020-2</h1>
+    </div>
+  <div class="wrapper">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script>
+    var ctx = document.getElementById('myChart').getContext("2d");
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ["", "EX1", "EC1", "EX2", "EX2", "EC3", "EX3"],
+          datasets: [{
+              label: "Interaccion Humano Computador",
+              borderColor: "#80b6f4",
+              pointBorderColor: "#80b6f4",
+              pointBackgroundColor: "#80b6f4",
+              pointHoverBackgroundColor: "#80b6f4",
+              pointHoverBorderColor: "#80b6f4",
+              pointBorderWidth: 10,
+              pointHoverRadius: 10,
+              pointHoverBorderWidth: 1,
+              pointRadius: 3,
+              fill: false, 
+              borderWidth: 4,
+              data: [0, 10, 2, 15, 17, 18, 7]
+          },
+          {
+              label: "Analisis y Diseño de Algoritmos",
+              borderColor: "#D4AC0D",
+              pointBorderColor: "#D4AC0D",
+              pointBackgroundColor: "#D4AC0D",
+              pointHoverBackgroundColor: "#D4AC0D",
+              pointHoverBorderColor: "#D4AC0D",
+              pointBorderWidth: 10,
+              pointHoverRadius: 10,
+              pointHoverBorderWidth: 1,
+              pointRadius: 3,
+              fill: false, 
+              borderWidth: 4,
+              data: [0, 11, 12, 15, 7, 8, 17]
+          },
+          {
+              label: "Arquitectura de Computadoras",
+              borderColor: "#196F3D",
+              pointBorderColor: "#196F3D",
+              pointBackgroundColor: "#196F3D",
+              pointHoverBackgroundColor: "#196F3D",
+              pointHoverBorderColor: "#196F3D",
+              pointBorderWidth: 10,
+              pointHoverRadius: 10,
+              pointHoverBorderWidth: 1,
+              pointRadius: 3,
+              fill: false, 
+              borderWidth: 4,
+              data: [0, 17, 11, 10, 7, 12, 19]
+          },
+        ]
+      },
+      options: {
+          legend: {
+              position: "bottom"
+          },
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      fontColor: "rgba(0,0,0,0.5)",
+                      fontStyle: "bold",
+                      beginAtZero: true, // Si es verdadero, la escala incluirá 0 si aún no está incluido.
+                      maxTicksLimit: 5, 
+                      padding: 20        
+                  },
+                  gridLines: {
+                      drawTicks: false, // Si es verdadero, dibuje líneas junto a las marcas en el área del eje al lado del gráfico.
+                      display: false
+                  }
+              }],
+              xAxes: [{
+                  gridLines: {
+                      zeroLineColor: "transparent" 
+                  },
+                  ticks: {
+                      padding: 20,
+                      fontColor: "rgba(0,0,0,0.5)",
+                      fontStyle: "bold"
+                  }
+              }]
+          }
+      }
+    });
+  </script>
+</body>
+</html>

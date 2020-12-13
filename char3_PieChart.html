@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Tema de este grafico</title>
+</head>
+<body>
+ <div class="container">
+   <canvas id="myChart"></canvas>
+</div>
+
+ <script>
+
+ let myChart = document.getElementById('myChart').getContext('2d');
+
+ // Global Options
+ Chart.defaults.global.defaultFontFamily = 'Lato';
+ Chart.defaults.global.defaultFontsize = 18;
+ Chart.defaults.global.defaultFontColor = '#777';
+
+
+ let PrPopChart = new Chart(myChart, {
+   type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+   data:{
+     labels:['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7'],
+     datasets:[{
+       label:'Population',
+       data:[
+         9,
+         10,
+         12,
+         13,
+         14,
+         15,
+         16
+       ],
+
+       // backgroundColor: 'green',
+       backgroundColor:[
+         '#e65100',
+         '#e65100',
+         '#f57c00',
+         '#fb8c00',
+         '#ff9800',
+         '#ffa726',
+         '#ffb74d'
+       ],
+       borderWidth:1,
+       borderColor:'white',
+       hoverBorderWidth: 3,
+       hoverBorderColor: 'grey'
+     }]
+   },
+   options:{
+     title:{
+       display: true,
+       text: 'Tema de este grafico',
+       fontSize:25
+     },
+     legend:{
+       display:true,
+       position:'right',
+       labels:{
+         fontColor: '#000'
+       }
+     },
+     layout:{
+       padding:{
+         left:50,
+         right:0,
+         bottom:0,
+         top:0
+       }
+     },
+     tooltips:{
+       enabled:true
+     }
+   }
+ });
+</script>
+</body>
+</html>

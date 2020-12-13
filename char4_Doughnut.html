@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <title>Numero de estudiantes</title>
+    <style>
+    html, body{
+      background: #f1f1f1;
+      padding-top: 10px;
+    }
+    .container{
+      width:60%;
+      display:block;
+      overflow:hidden;
+      margin:0 auto;
+      padding: 60px 50px;
+      background:#fff;
+      border-radius:4px;
+    }
+    canvas{
+      background:#fff;
+    }
+    .jumbotron{
+        color:darkblue;
+        font-family: "century gothic";
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+	 <div class="jumbotron">
+        <h1>Numero de estudiantes Matriculados en Interaccion Humano Computador</h1>
+    </div>
+
+ <div class="container">
+   <canvas id="myChart"></canvas>
+</div>
+
+ <script>
+
+ let myChart = document.getElementById('myChart').getContext('2d');
+
+ // Global Options
+ Chart.defaults.global.defaultFontFamily = 'Lato';
+ Chart.defaults.global.defaultFontsize = 18;
+ Chart.defaults.global.defaultFontColor = '#777';
+
+
+ let PrPopChart = new Chart(myChart, {
+   type:'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+   data:{
+     labels:['Teoria Grupo A', 'Teoria Grupo B', 'Laboratorio Grupo A', 'Laboratorio Grupo B', 'Laboratorio Grupo C', 'Laboratorio Grupo D'],
+     datasets:[{
+       label:'Population',
+       data:[
+         45,
+         35,
+         25,
+         20,
+         19,
+         18
+       ],
+
+       // backgroundColor: 'green',
+       backgroundColor:[
+         '#0000FF',
+         '#FF0000',
+         '#FFFF00',
+         '#008000',
+         '#FF00FF',
+         '#FF4500'
+
+       ],
+       borderWidth:1,
+       borderColor:'white',
+       hoverBorderWidth: 3,
+       hoverBorderColor: 'grey'
+     }]
+   },
+   options:{
+    
+     legend:{
+       display:true,
+       position:'right',
+       labels:{
+         fontColor: '#000'
+       }
+     },
+     layout:{
+       padding:{
+         left:50,
+         right:0,
+         bottom:0,
+         top:0
+       }
+     },
+     tooltips:{
+       enabled:true
+     }
+   }
+ });
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>Tema de este grafico</title>
+  <title>Promedio de notas en el curso de Investigaciónd de Operaciones</title>
 </head>
 <body>
  <div class="container">
@@ -26,7 +26,7 @@
  let PrPopChart = new Chart(myChart, {
    type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
    data:{
-     labels:['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7'],
+     labels:['Nota de 15', 'Nota de 14.5', 'Nota de 13.5', 'Nota de 13', 'Nota de 12.5', 'Nota de 11.5', 'Nota de 10.5'],
      datasets:[{
        label:'Population',
        data:[
@@ -58,7 +58,7 @@
    options:{
      title:{
        display: true,
-       text: 'Tema de este grafico',
+       text: 'Promedio de notas en el curso de Investigaciónd de Operaciones',
        fontSize:25
      },
      legend:{
